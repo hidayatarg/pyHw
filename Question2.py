@@ -1,11 +1,15 @@
+# Question 2
 import math
-
 # e^1    >> math.exp(y)
 x = 0
 y = 0
+# Toplama Tutacagiz
 Total = 0
+# X Icin Dongu
 while (x < 100):
+    # Her x icin dongu tamamlayinca y sifirlariz
     y = 0
+    # Y Icin Dongu
     while (y < 100):
         if (x > y):
             Total = (x * math.exp(y))
@@ -16,11 +20,7 @@ while (x < 100):
         else:
             if x != 0:
                 Total = (x / (math.log(y + 1)))
-                print(Total)
-            print("cannot divide by zero")
         y += 1
-        print("Y= {0} ".format(y))
     x += 1
-    print("X= {0} ".format(x))
 
 print(Total)
