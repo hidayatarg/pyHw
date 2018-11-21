@@ -10,7 +10,7 @@ for i in range(20):
     i += 1
 
 maxValue = max(Number)
-minValue = max(Number)
+minValue = min(Number)
 print("GIRILEN SAYILAR MAX:{0} ".format(maxValue))
 print("GIRILEN SAYILAR MIN:{0} ".format(minValue))
 print("GIRILEN SAYILAR:{0} ".format(Number))
