@@ -18,19 +18,22 @@ print(randomList[0])
 
 Number = []
 
-win=False
+win = False
 
-print(Number)
+# For the terms of games
 j = 0
 z = 0
+# For counting the digit location
 digitLocation = 0
-while j<10:
-    for i in range(3):
+while j < 10:
+    # Filling the number with four digit number
+    for i in range(4):
         x = int(input("enter no.{0}: ".format(i + 1)))
         Number.insert(i, x)
         i += 1
-
-    for i in range(3):
+    # For checking the number
+    i = 0
+    for i in range(4):
         if Number[i] == randomList[z]:
             if digitLocation == z:
                 print("+")
@@ -54,23 +57,25 @@ while j<10:
                 print("+")
             else:
                 print('-')
-
         else:
             print("0")
         i += 1
         digitLocation += 1
         y = 0
-        for i in range(3):
-            if(Number[i]==randomList[i]):
-                if(y==4):
-                    print("You win the game")
-                    win=True
-                    break
-                y += 1
-    if(win=True):
+        i = 0
+    # Check if all the digits are found and found digits are correct
+    while i < 4:
+        if Number[i] == randomList[i]:
+            if y == 4:
+                print("You win the game")
+                win = True
+                break
+            y += 1
+    if win:
         break            
     j += 1
-    print("You have {0} chances to play".format(j))
+    i = 0
+    print("You have {0} chances to play".format(10-j))
 
 
 # Allow user to guess the number
