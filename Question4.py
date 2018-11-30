@@ -1,23 +1,15 @@
 # Question 4
 
-
-#Generate 4 digit random number
-
 import random
-
-#a = random.randint(1000, 9999)
 a = random.randint(0, 9)
 b = random.randint(0, 9)
 c = random.randint(0, 9)
 d = random.randint(0, 9)
-#print(a, b, c, d)
 
 randomList = [a, b, c, d]
 print(randomList)
-print(randomList[0])
 
 Number = []
-
 win = False
 
 # For the terms of games
@@ -25,15 +17,18 @@ j = 0
 z = 0
 # For counting the digit location
 digitLocation = 0
+# 10 chances if guess right winning message or print the tries
 while j < 10:
     # Filling the number with four digit number
+    # Allow user to guess the number
     for i in range(4):
-        x = int(input("enter no.{0}: ".format(i + 1)))
+        x = int(input("enter digit.{0}: ".format(i + 1)))
         Number.insert(i, x)
         i += 1
     # For checking the number
     i = 0
     for i in range(4):
+        # If the user guess match the target number and the location
         if Number[i] == randomList[z]:
             if digitLocation == z:
                 print("+")
@@ -47,8 +42,10 @@ while j < 10:
                 print('-')
 
         elif Number[i] == randomList[z+2]:
+            # For each correct print  +
             if digitLocation == z+2:
                 print("+")
+            # If match but different location -
             else:
                 print('-')
 
@@ -57,8 +54,9 @@ while j < 10:
                 print("+")
             else:
                 print('-')
+        # if not match and (not  location and value it is blank)
         else:
-            print("0")
+            print("Blank")
         i += 1
         digitLocation += 1
         y = 0
@@ -76,14 +74,3 @@ while j < 10:
     j += 1
     i = 0
     print("You have {0} chances to play".format(10-j))
-
-
-# Allow user to guess the number
-
-# If the user guess match the target number and the location
-
-# For each correct print a +  if match but different location -
-
-# if not match and (not  location and value it is blank)
-
-# 10 chances if guess right winning message or print the tries
