@@ -4,11 +4,14 @@ rolled = []
 rolledtimes = 0
 biggest = []
 
-freq = int(input('How many times would you like to roll the dice? '))
+# freq = int(input('How many times would you like to roll the dice? '))
+freq = 1000
 
 
 def roll():
-    rand = random.randrange(1, 7)
+    randy = str(random.randrange(1, 7))
+    sandy = str(random.randrange(1, 7))
+    rand =int(randy+sandy)
     return rand
 
 
