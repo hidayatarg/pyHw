@@ -18,7 +18,7 @@
 #         j += 1
 #         z += 1
 #     i += 1
-j=1
-while(j < 7):
-    print('*')
-    j += 1
+
+
+for item in range(1, 100):
+    print ("*", end='')
