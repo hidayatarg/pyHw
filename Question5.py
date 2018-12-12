@@ -15,12 +15,17 @@ def roll():
     return rand
 
 
-def probability():
-    for i in range(0, len(count)):
-        print('Calculation of probability:')
+# def probability():
+#     for i in range(0, len(count)):
+#         print('Calculation of probability:')
+#         percentage = "{:.2f}".format((count[i] / freq)*100)
+#         percent = str(percentage) + '%'
+#         print(' ', i + 1, ':', percent)
+
+def probability(i):
         percentage = "{:.2f}".format((count[i] / freq)*100)
         percent = str(percentage) + '%'
-        print(' ', i + 1, ':', percent)
+        return percent
 
 
 def theoretical():
@@ -59,18 +64,6 @@ count = [rolled.count(11), rolled.count(12), rolled.count(13), rolled.count(14),
 print(count)
 print(len(count))
 # 35
-# print(
-#       'After being rolled {} times:\n\n1-1 is rolled {} times\n1-2 is rolled {} times\n1-3 is rolled {} times\n1-4 is rolled {} times\n1-5 is rolled {} times\n1-6 is rolled {} times\n'
-#       '2-1 is rolled {} times\n2-2 is rolled {} times\n2-3 is rolled {} times\n2-4 is rolled {} times\n2-5 is rolled {} times\n2-6 is rolled {} times\n'
-#       '3-1 is rolled {} times\n3-2 is rolled {} times\n3-3 is rolled {} times\n3-4 is rolled {} times\n3-5 is rolled {} times\n3-6 is rolled {} times\n'
-#       '4-1 is rolled {} times\n4-2 is rolled {} times\n4-3 is rolled {} times\n4-4 is rolled {} times\n4-5 is rolled {} times\n4-6 is rolled {} times\n'
-#       '5-1 is rolled {} times\n5-2 is rolled {} times\n5-3 is rolled {} times\n5-4 is rolled {} times\n5-5 is rolled {} times\n5-6 is rolled {} times\n'
-#       '6-1 is rolled {} times\n6-2 is rolled {} times\n6-3 is rolled {} times\n6-4 is rolled {} times\n6-5 is rolled {} times\n6-6 is rolled {} times\n'.format(
-#       rolledtimes, count[0], count[1], count[2], count[3], count[4], count[5], count[6], count[7], count[8], count[9], count[10], count[11]
-#       , count[12], count[13], count[14], count[15], count[16], count[17], count[18], count[19], count[20], count[21]
-#       , count[22], count[23], count[24], count[25], count[26], count[27], count[28], count[29], count[30], count[31]
-#       , count[32], count[33], count[34], count[35])
-#       )
 
 print('After being rolled {} times\n\n'.format(rolledtimes))
 print('Dice \t count')
@@ -83,16 +76,12 @@ while(i < 7):
         print('{}-{}  \t  {} '.format(i, j, count[z]), end="", flush=True)
         for item in range(1, count[z]):
             print("*", end='')
-        # n = 0
-        # while n <= count[z]:
-        #     print('*', end='')
-        #     n += 1
-        print('\n')
+        print(probability(z))
         j += 1
         z += 1
     i += 1
 
-probability()
-findBiggest()
-findSmallest()
-theoretical()
+# probability()
+# findBiggest()
+# findSmallest()
+# theoretical()
